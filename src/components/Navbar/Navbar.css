@@ -32,7 +32,8 @@
   align-items: center;
 }
 .Navbar .logo img {
-  height: 50px; /* Adjust the height as needed */
+  height: 70px;
+  object-fit: cover;
   border-radius: 20px;
 }
 .Navbar ul li {

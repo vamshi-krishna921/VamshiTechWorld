@@ -6,7 +6,7 @@ const courses = [
   {
     id: "java",
     title: "Java + DSA + Automation",
-    mode: "Online",
+    mode: "ONLINE",
     image: java,
     status: "Active",
     description:
@@ -36,7 +36,7 @@ const courses = [
   {
     id: "git",
     title: "Git and GitHub",
-    mode: "Offline",
+    mode: "ONLINE",
     image: git,
     status: "Coming Soon",
     description:
@@ -57,7 +57,7 @@ const courses = [
   {
     id: "docker",
     title: "Docker",
-    mode: "Offline",
+    mode: "ONLINE",
     image: docker,
     status: "Coming Soon",
     description:

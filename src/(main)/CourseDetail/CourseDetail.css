@@ -48,20 +48,18 @@
 
 .leftimg img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 
 .tag {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: #2563eb;
-  color: #fff;
-  padding: 0.3rem 0.9rem;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  top: 0rem;
+  right: 0rem;
+  padding: 10px;
+  background-color: #DD6B20;
+  color: white;
+  border-radius: 10px;
 }
 
 /* Card for Duration & Level */

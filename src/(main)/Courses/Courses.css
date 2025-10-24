@@ -74,10 +74,10 @@ main {
 /* Courses grid layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 cards per row */
   gap: 30px;
   max-width: 1200px;
-  margin: 0 auto 60px; /* Add bottom margin */
+  margin: 0 auto 60px;
   padding: 0 20px;
 }
 

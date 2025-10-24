@@ -11,7 +11,7 @@ const CourseCard = ({ id, title, mode, image, status, description }) => {
         <div className="course-card-image-gradient" />
         <span
           className={`course-card-badge course-card-mode-badge ${
-            mode === "Online" ? "badge-default" : "badge-secondary"
+            mode === "ONLINE" ? "badge-default" : "badge-secondary"
           }`}
         >
           {mode}
@@ -57,9 +57,8 @@ const CourseCard = ({ id, title, mode, image, status, description }) => {
           <button
             type="button"
             className="course-card-button button-outline"
-            onClick={() => window.open("https://forms.google.com", "_blank")}
           >
-            Notify Me
+            Coming soon
           </button>
         )}
       </div>

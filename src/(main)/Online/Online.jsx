@@ -7,7 +7,7 @@ import CourseCard from "../../components/CourseCard/CourseCard";
 import Footer from "../../components/Footer/Footer";
 
 const Online = () => {
-  const onlinecourses = courses.filter((course) => course.mode === "Online");
+  const onlinecourses = courses.filter((course) => course.mode === "ONLINE");
   return (
     <div>
       <Navbar />
