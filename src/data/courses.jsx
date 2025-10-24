@@ -11,7 +11,7 @@ const courses = [
     status: "Active",
     description:
       "Comprehensive training covering Core Java, Data Structures & Algorithms, and Test Automation. Build real-world projects and master interview-level problem-solving.",
-    duration: "12 weeks",
+    duration: "16 weeks",
     level: "Beginner to Advanced",
     syllabus: [
       "FlowCharts",
