@@ -1,0 +1,210 @@
+/* c:\Users\Vivek\OneDrive\Desktop\vamshicourses\src\components\CourseCard\CourseCard.css */
+
+:root {
+  /* --- Color & Font Palette --- */
+  /* You can customize these values to match your site's theme */
+  --card-bg: #ffffff;
+  --card-text: #2d3748;
+  --card-text-muted: #718096;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --color-primary: #4299e1; /* Blue */
+  --color-secondary: #a0aec0; /* Gray */
+  --color-success: #f6ad55; /* Orange for View Details button */
+  --color-success-hover: #ed8936; /* Darker orange for hover */
+  --color-success-rgb: 246, 173, 85; /* RGB for orange, for opacity in shadow */
+
+  --button-outline-hover-bg: #ebf8ff; /* Light blue for Notify Me hover background */
+  --button-outline-hover-text: #dd6b20; /* Deep orange for Notify Me hover text/border */
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Georgia", serif;
+}
+
+/* --- Main Card Container --- */
+.course-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem; /* A slightly larger radius */
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  /* Add max-width to prevent stretching and margin to center it in the grid cell */
+  max-width: 380px;
+  margin: 0 auto; /* Centers the card if the grid container is wider */
+}
+
+/* --- Hover Effects --- */
+.course-card.group:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.course-card.group:hover .course-card-image {
+  transform: scale(1.05);
+}
+
+.course-card.group:hover .course-card-title {
+  color: var(--color-primary);
+}
+
+/* --- Image Section --- */
+.course-card-image-container {
+  position: relative;
+  height: 12rem; /* 192px */
+  overflow: hidden;
+}
+
+.course-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.course-card-image-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+}
+
+/* --- Badge Styles --- */
+.course-card-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.course-card-mode-badge {
+  top: 0rem;
+  right: 0rem;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+.badge-default {
+  background-color: var(--color-primary);
+}
+
+.badge-secondary {
+  background-color: var(--color-secondary);
+}
+
+.badge-outline {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* --- Coming Soon Overlay --- */
+.course-card-coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-text {
+  font-size: 1.125rem;
+  padding: 0.5rem 1.25rem;
+}
+
+/* --- Content Section --- */
+.course-card-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allows content to fill space */
+}
+
+.course-card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--card-text);
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.course-card-description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--card-text-muted);
+  margin: 0;
+  /* Truncate text to 2 lines */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* --- Footer & Button Section --- */
+.course-card-footer {
+  padding: 0 1.5rem 1.5rem;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.course-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-family: var(--font-body);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.button-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.button-success:hover {
+  background-color: var(--color-success-hover); /* Darker orange */
+  box-shadow: 0 0 15px rgba(var(--color-success-rgb), 0.4); /* Orange shadow */
+}
+
+.button-outline {
+  background-color: transparent;
+  border-color: var(--card-border);
+  color: var(--card-text);
+}
+
+.button-outline:hover {
+  background-color: var(--button-outline-hover-bg); /* Light blue background */
+  border-color: var(--button-outline-hover-text); /* Orange border */
+  color: var(--button-outline-hover-text); /* Orange text */
+}
+
+.course-card-button-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Icon animation on button hover */
+.course-card-button.group\/btn:hover .course-card-button-icon {
+  transform: translateX(4px);
+}

@@ -1,0 +1,139 @@
+/* General styling for the main content area */
+main {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* Light background for the content section */
+  min-height: calc(
+    100vh - var(--navbar-height, 80px) - var(--footer-height, 300px)
+  ); /* Adjust based on actual navbar/footer height */
+}
+
+/* Container for consistent spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header section styling */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.15rem;
+  color: #666;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Search bar styling */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.search img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  filter: invert(30%); /* Makes the search icon dark grey */
+}
+
+.search-input {
+  width: 100%;
+  max-width: 550px;
+  padding: 14px 22px;
+  border: 1px solid #ddd;
+  border-radius: 30px; /* More rounded corners */
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Courses grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px; /* Add bottom margin */
+  padding: 0 20px;
+}
+
+/* No courses found message */
+.notfoundtext {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #888;
+  padding: 80px 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  .search-input {
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 40px 0;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .header p {
+    font-size: 0.9rem;
+  }
+  .search {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .search img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .search-input {
+    max-width: 100%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+    gap: 20px;
+  }
+  .notfoundtext {
+    padding: 60px 15px;
+    font-size: 1.1rem;
+  }
+}

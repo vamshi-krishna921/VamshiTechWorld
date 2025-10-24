@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.Navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 90px;
+  font-family: "Inter", system-ui, sans-serif;
+  
+  background: rgba(255, 255, 255, 0.5); /* translucent white */
+  backdrop-filter: blur(20px); /* the blur magic */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.Navbar ul {
+  display: flex;
+  gap: 50px;
+}
+.Navbar .logo {
+  display: flex;
+  align-items: center;
+}
+.Navbar .logo img {
+  height: 50px; /* Adjust the height as needed */
+  border-radius: 20px;
+}
+.Navbar ul li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(107, 105, 105);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.Navbar ul li:hover,
+.Navbar ul li.active {
+  color: orange;
+}

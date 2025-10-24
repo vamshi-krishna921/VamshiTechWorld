@@ -1,0 +1,192 @@
+/* --- General Styles --- */
+.main {
+  padding: 4rem 0;
+  background-color: #f9fafb; /* Light gray background */
+}
+
+/* --- Header Section --- */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* --- Left Grid: Contact Info --- */
+.left-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mail,
+.phone,
+.location {
+  display: flex;
+  align-items: center; /* Vertically center content in the card */
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.mail svg, /* Changed from img to svg */
+.phone svg, /* Changed from img to svg */
+.location svg {
+  /* Changed from img to svg */
+  width: 55px; /* Increased size for the background */
+  height: 55px;
+  padding: 10px; /* Padding to create space around the icon */
+  border-radius: 50%; /* Make the background circular */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.mail svg {
+  /* Changed from img to svg */
+  background-color: #f3f4f6; /* Light grey background */
+  color:blue;
+}
+
+.phone svg {
+  /* Changed from img to svg */
+  background-color: hsl(42,100%,50%,0.1);
+  color: orange;
+}
+
+.location svg {
+  /* Changed from img to svg */
+  background-color: hsl(142,76%,36%,0.1);
+  color: green;
+}
+
+.mail h3,
+.phone h3,
+.location h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.mail p,
+.phone p,
+.location p {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* --- Right Grid: Form --- */
+.right-grid form {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-contact label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.form-contact input,
+.form-contact textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  background-color: rgb(249, 250, 251);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-contact input:focus,
+.form-contact textarea:focus {
+  outline: none;
+  border-color: orange;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.4);
+}
+
+.right-grid button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 1.5rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.right-grid button[type="submit"]:hover {
+  background-color: #f97316; /* Darker orange */
+}
+
+/* --- Form Feedback Messages --- */
+.form-error {
+  color: #ef4444; /* Red */
+  background-color: #fee2e2;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fca5a5;
+}
+
+.form-success {
+  color: #16a34a; /* Green */
+  background-color: #dcfce7;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #86efac;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .right-grid form {
+    padding: 1.5rem;
+  }
+}

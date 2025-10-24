@@ -1,0 +1,132 @@
+footer {
+  background-color: #1a1a1a; /* Dark background for a modern feel */
+  color: #ccc; /* Light grey text for readability */
+  padding: 60px 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  border-top: 4px solid #007bff; /* Accent color border */
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  /* Creates a responsive grid that wraps columns on smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* --- Grid Item 1: Logo and Brand --- */
+.grid1 .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.grid1 p {
+  line-height: 1.6;
+  max-width: 250px;
+}
+
+/* --- Grid Item 2 & 3: Links and Courses --- */
+footer h3 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Underline effect for headings */
+footer h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 35px;
+  height: 2px;
+  background-color: #007bff;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  margin-bottom: 12px;
+  color: #ccc;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  padding-left: 5px; /* Slight indent on hover */
+}
+
+/* --- Grid Item 4: Contact Info --- */
+.grid4 li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.grid4 img {
+  width: 20px;
+  height: 20px;
+  filter: invert(80%); /* Makes the SVG icons match the text color */
+}
+
+/* --- Copyright Section --- */
+.right {
+  grid-column: 1 / -1; /* Makes this item span all columns */
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333; /* Separator line */
+}
+
+.right p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  footer .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .grid1 p {
+    margin: 0 auto;
+  }
+
+  .grid4 li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .container {
+    grid-template-columns: 1fr; /* Stack all items vertically */
+  }
+}

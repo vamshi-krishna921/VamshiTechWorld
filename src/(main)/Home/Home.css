@@ -1,0 +1,314 @@
+/* --- CSS Variables --- */
+:root {
+  --color-primary: #f97316; /* orange-500 */
+  --color-accent: #3b82f6; /* blue-500 */
+  --color-success: #22c55e; /* green-500 */
+  --color-secondary: #e5e7eb; /* gray-200 */
+  --color-card: #ffffff;
+  --color-muted-foreground: #6b7280; /* gray-500 */
+  --font-heading: "Inter", system-ui, sans-serif;
+}
+
+/* --- Sections --- */
+.who-we-are {
+  padding-top: 5rem; /* py-20 -> 80px */
+  padding-bottom: 5rem;
+  background-color: rgba(229, 231, 235, 0.3); /* bg-secondary/30 */
+}
+
+/* --- General Containers & Typography --- */
+/* This container is used across multiple sections */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: 2rem; /* px-8 */
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px; /* Match courses section for consistency */
+  }
+}
+
+/* Container for centered text content */
+.text-container {
+  max-width: 56rem; /* max-w-4xl -> 896px */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Simulates space-y-6 for direct children */
+.text-container > * + * {
+  margin-top: 1.5rem; /* space-y-6 */
+}
+
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700; /* font-bold */
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3rem; /* md:text-5xl */
+    line-height: 1;
+  }
+}
+
+.who-we-are.is-visible .heading {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.subheading {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+  color: var(--color-muted-foreground); /* text-muted-foreground */
+  line-height: 1.6; /* leading-relaxed */
+}
+
+.grid-container {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+  margin-top: 3rem; /* mt-12 */
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+  }
+}
+
+.who-we-are.is-visible .subheading {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  padding: 1.5rem; /* p-6 */
+  background-color: var(--color-card);
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* shadow-sm */
+  transition: box-shadow 0.3s ease;
+  opacity: 0; /* Start hidden for fade-in animation */
+}
+
+.grid-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1); /* hover:shadow-md */
+}
+
+.who-we-are.is-visible .grid-item {
+  animation: scale-in 0.8s ease-out forwards;
+}
+
+.who-we-are.is-visible .grid-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.who-we-are.is-visible .grid-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* --- Icon Styling --- */
+.icon-wrapper {
+  padding: 1rem; /* p-4 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.icon-wrapper.bg-primary {
+  background-color: rgba(249, 115, 22, 0.1);
+}
+.icon-wrapper.bg-accent {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+.icon-wrapper.bg-success {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.icon {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+}
+
+.icon.text-primary {
+  color: var(--color-primary);
+}
+.icon.text-accent {
+  color: var(--color-accent);
+}
+.icon.text-success {
+  color: var(--color-success);
+}
+
+.item-heading {
+  font-family: var(--font-heading);
+  font-weight: 600; /* font-semibold */
+  font-size: 1.25rem; /* text-xl */
+}
+
+.item-text {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--color-muted-foreground);
+  text-align: center;
+}
+
+/* --- Animations for "Who We Are" Section --- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* courses section  */
+
+.home-courses-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  width: 100%;
+}
+.home-courses-section .container .heading {
+  margin-bottom: 3rem;
+}
+
+/* Course Grid - Horizontal Scroll */
+.course-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents cards from wrapping to the next line */
+  overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+  gap: 2rem;
+  /* Add some padding for aesthetics and scrollbar space */
+  padding: 0.5rem 0 1.5rem 0.5rem;
+  /* Counteract the padding to align with container edges */
+  margin: 0 -0.5rem;
+}
+
+/* Individual Course Card */
+.course-card {
+  /* Crucial for horizontal scroll: Don't grow, don't shrink, fixed 300px width */
+  flex: 0 0 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Needed for positioning the status badge */
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows this container to fill the remaining card space */
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.course-description {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.course-button {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: auto; /* Pushes button to the bottom of the content area */
+  text-transform: capitalize;
+}
+
+.course-button:hover {
+  background-color: #ea580c; /* orange-600 */
+}
+
+.course-button.notify-me {
+  background-color: #9ca3af; /* gray-400 */
+  cursor: not-allowed;
+}
+
+.course-status {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.course-status.online {
+  background-color: orange; /* blue-500 */
+}
+
+.course-status.offline {
+  background-color: blue; /* violet-500 */
+}
