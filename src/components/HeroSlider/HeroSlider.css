@@ -4,8 +4,8 @@
   overflow: hidden;
   border-radius: 1rem;
   color: white;
-  max-width: 1280px; /* Or any width you prefer */
-  margin: 48px auto; /* Centers the container */
+  max-width: 1280px;
+  margin: 48px auto;
 }
 
 .slide {
@@ -98,3 +98,29 @@
 
 .prev-button { left: 1rem; }
 .next-button { right: 1rem; }
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 1024px) {
+  .image-container { height: 500px; }
+  .content { max-width: 60%; padding: 0 2rem; }
+  .content h1 { font-size: 2.8rem; }
+  .content p { font-size: 1.1rem; }
+}
+
+@media (max-width: 768px) {
+  .image-container { height: 400px; }
+  .content { max-width: 70%; padding: 0 1.5rem; }
+  .content h1 { font-size: 2.2rem; }
+  .content p { font-size: 1rem; }
+  .cta-button { padding: 0.6rem 1.5rem; font-size: 1rem; }
+  .slider-button { width: 40px; height: 40px; font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .image-container { height: 300px; }
+  .content { max-width: 90%; padding: 0 1rem; }
+  .content h1 { font-size: 1.8rem; }
+  .content p { font-size: 0.9rem; }
+  .cta-button { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  .slider-button { width: 35px; height: 35px; font-size: 1rem; }
+}

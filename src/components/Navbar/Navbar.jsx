@@ -6,65 +6,42 @@ import logo from "../../assets/Logo1.png";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Home");
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="Navbar">
       <div className="logo">
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo" />
       </div>
-      <div className="menu">
+
+      <div
+        className={`menu-toggle ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div className={`menu ${isOpen ? "active" : ""}`}>
         <ul>
-          <li
-            onClick={() => setMenu("Home")}
-            className={menu === "Home" ? "active" : ""}
-          >
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-              Home
-            </Link>
-          </li>
-          <li
-            onClick={() => setMenu("Courses")}
-            className={menu === "Courses" ? "active" : ""}
-          >
-            <Link
-              to="/courses"
-              style={{ textDecoration: "none", color: "inherit" }}
+          {["Home", "Courses", "Online", "Offline", "Contact"].map((item) => (
+            <li
+              key={item}
+              onClick={() => {
+                setMenu(item);
+                setIsOpen(false);
+              }}
+              className={menu === item ? "active" : ""}
             >
-              Courses
-            </Link>
-          </li>
-          <li
-            onClick={() => setMenu("Online")}
-            className={menu === "Online" ? "active" : ""}
-          >
-            <Link
-              to="/online"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Online
-            </Link>
-          </li>
-          <li
-            onClick={() => setMenu("Offline")}
-            className={menu === "Offline" ? "active" : ""}
-          >
-            <Link
-              to="/offline"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Offline
-            </Link>
-          </li>
-          <li
-            onClick={() => setMenu("Contact")}
-            className={menu === "Contact" ? "active" : ""}
-          >
-            <Link
-              to="/contact"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Contact
-            </Link>
-          </li>
+              <Link
+                to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
